@@ -9,10 +9,17 @@ const taskRoutes = require('./routes/taskRoutes');
 const app = express();
 const PORT = 3000;
 
+const hbs = exphbs.create({
+  helpers: {
+    eq: (a, b) => a === b
+  },
+  defaultLayout: 'main'
+});
+
 // 3. CONFIGURAÇÃO DE MIDDLEWARES
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.engine('handlebars', exphbs());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 

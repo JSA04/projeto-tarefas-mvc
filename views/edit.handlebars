@@ -5,6 +5,15 @@
   <input type="text" name="title" value="{{task.title}}" required/><br>
   <label>Descrição:</label><br>
   <input type="text" name="description" value="{{task.description}}" /><br><br>
+  <label>Prioridade:</label><br>
+  <div>
+    <input type="radio" id="lowPriority" name="priority" value="0" {{#if (eq task.priority 0)}}checked{{/if}}>
+    <label for="lowPriority">Baixa</label><br>
+    <input type="radio" id="mediumPriority" name="priority" value="1" {{#if (eq task.priority 1)}}checked{{/if}}>
+    <label for="mediumPriority">Média</label><br>
+    <input type="radio" id="highPriority" name="priority" value="2" {{#if (eq task.priority 2)}}checked{{/if}}>
+    <label for="highPriority">Alta</label>
+  </div>
   <label for="done">Concluída?</label>
   <input type="checkbox" id="done" name="done" {{#if task.done}}checked{{/if}}/>
   <br><br>

@@ -4,5 +4,13 @@
   <input type="text" name="title" placeholder="O que precisa ser feito?" required/><br>
   <label>Descrição:</label><br>
   <input type="text" name="description" placeholder="Algum detalhe extra?" /><br><br>
+  <div>
+    <input type="radio" id="lowPriority" name="priority" value="0">
+    <label for="lowPriority">Baixa</label><br>
+    <input type="radio" id="mediumPriority" name="priority" value="1">
+    <label for="mediumPriority">Média</label><br>
+    <input type="radio" id="highPriority" name="priority" value="2">
+    <label for="highPriority">Alta</label>
+  </div>
   <button type="submit">Criar Tarefa</button>
 </form>
